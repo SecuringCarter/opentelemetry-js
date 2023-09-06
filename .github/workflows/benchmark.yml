@@ -48,7 +48,7 @@ jobs:
 
       - name: Benchmark tests
         run: |
-          npm run test-bench
+          npm run test:bench
 
       - name: Store benchmark results
         uses: benchmark-action/github-action-benchmark@v1
