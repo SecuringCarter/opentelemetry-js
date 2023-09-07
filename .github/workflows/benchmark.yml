@@ -57,5 +57,5 @@ jobs:
           output-file-path: packages/opentelemetry-sdk-trace-base/benchmarks.txt
           gh-pages-branch: benchmarks
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          benchmark-data-dir-path: "docs/benchmarks/loadtests"
+          benchmark-data-dir-path: "pages/benchmarks/loadtests"
           auto-push: true
