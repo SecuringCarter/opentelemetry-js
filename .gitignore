@@ -68,9 +68,6 @@ typings/
 yarn.lock
 package-lock.json
 
-# docs files
-docs
-
 .nyc_output
 
 #lerna
