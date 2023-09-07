@@ -54,7 +54,7 @@ jobs:
         uses: benchmark-action/github-action-benchmark@v1
         with:
           tool: 'benchmarkjs'
-          output-file-path: benchmarks.txt
+          output-file-path: packages/opentelemetry-sdk-trace-base/benchmarks.txt
           gh-pages-branch: benchmarks
           github-token: ${{ secrets.GITHUB_TOKEN }}
           benchmark-data-dir-path: "docs/benchmarks/loadtests"
