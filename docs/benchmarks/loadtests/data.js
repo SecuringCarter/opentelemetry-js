@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1694125878129,
+  "lastUpdate": 1694126342882,
   "repoUrl": "https://github.com/SecuringCarter/opentelemetry-js",
   "entries": {
     "Benchmark": [
@@ -957,6 +957,35 @@ window.BENCHMARK_DATA = {
             "range": "±0.19%",
             "unit": "ops/sec",
             "extra": "97 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Martin Kuba",
+            "username": "martinkuba",
+            "email": "martin@martinkuba.com"
+          },
+          "committer": {
+            "name": "Martin Kuba",
+            "username": "martinkuba",
+            "email": "martin@martinkuba.com"
+          },
+          "id": "238acd026682cb76b18a4e1bf754c11198484fa6",
+          "message": "run periodically to test consistency",
+          "timestamp": "2023-09-07T22:32:23Z",
+          "url": "https://github.com/SecuringCarter/opentelemetry-js/commit/238acd026682cb76b18a4e1bf754c11198484fa6"
+        },
+        "date": 1694126341894,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "create spans (10 attributes)",
+            "value": 712741,
+            "range": "±0.19%",
+            "unit": "ops/sec",
+            "extra": "100 samples"
           }
         ]
       }
