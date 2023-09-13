@@ -11,7 +11,7 @@ jobs:
           # - "14"
           # - "16"
           - "18"
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       NPM_CONFIG_UNSAFE_PERM: true
     steps:
