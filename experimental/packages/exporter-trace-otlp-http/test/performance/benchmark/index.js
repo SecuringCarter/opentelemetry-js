@@ -15,18 +15,44 @@
  */
 
 const Benchmark = require('benchmark');
-const { BasicTracerProvider } = require('../../../build/src');
+const { BasicTracerProvider } = require('@opentelemetry/sdk-trace-base');
+const { OTLPTraceExporter } = require('../../../build/src');
+const { create } = require('domain');
 
 const suite = new Benchmark.Suite();
+
+const exporter = new OTLPTraceExporter();
+
+const tracerProvider = new BasicTracerProvider();
+const tracer = tracerProvider.getTracer('test')
+
+const spans = [];
+for (let i = 0; i < 512; i++) {
+  const span = createSpan('test span ' + i, 20);
+  spans.push(span);
+}
+const singleSpan = spans.slice(0, 1);
 
 suite.on('cycle', event => {
   console.log(String(event.target));
 });
 
-suite.add('serialize spans', function() {
-  let a = 1;
-  let b = 2;
-  let c = a + b;
+suite.add('OTLPTraceExporter HTTP, serialize single span', function() {
+  const request = exporter.convert(singleSpan);
+});
+
+suite.add('OTLPTraceExporter HTTP, serialize 512 spans', function() {
+  const request = exporter.convert(spans);
 });
 
 suite.run();
+
+function createSpan(name, attributeCount) {
+  const span = tracer.startSpan('span');
+  for (let i = 0; i < attributeCount; i++) {
+    const a = Array(20).fill(String.fromCharCode(97 + i)).join('');
+    span.setAttribute(a, a);
+  }
+  span.end();
+  return span;
+}
