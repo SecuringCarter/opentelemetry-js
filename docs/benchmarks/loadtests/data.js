@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1694198374686,
+  "lastUpdate": 1694632843938,
   "repoUrl": "https://github.com/SecuringCarter/opentelemetry-js",
   "entries": {
     "Benchmark": [
@@ -2146,6 +2146,49 @@ window.BENCHMARK_DATA = {
             "range": "±0.26%",
             "unit": "ops/sec",
             "extra": "98 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Martin Kuba",
+            "username": "martinkuba",
+            "email": "martin@martinkuba.com"
+          },
+          "committer": {
+            "name": "Martin Kuba",
+            "username": "martinkuba",
+            "email": "martin@martinkuba.com"
+          },
+          "id": "5553b250296b7ea5e7cbd79f45a532aeac3b366c",
+          "message": "updated workflow to use self hosted runner",
+          "timestamp": "2023-09-13T19:18:15Z",
+          "url": "https://github.com/SecuringCarter/opentelemetry-js/commit/5553b250296b7ea5e7cbd79f45a532aeac3b366c"
+        },
+        "date": 1694632840136,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "OTLPTraceExporter HTTP, serialize single span",
+            "value": 468722,
+            "range": "±1.63%",
+            "unit": "ops/sec",
+            "extra": "87 samples"
+          },
+          {
+            "name": "OTLPTraceExporter HTTP, serialize 512 spans",
+            "value": 1118,
+            "range": "±1.10%",
+            "unit": "ops/sec",
+            "extra": "77 samples"
+          },
+          {
+            "name": "create spans (10 attributes)",
+            "value": 331527,
+            "range": "±1.48%",
+            "unit": "ops/sec",
+            "extra": "86 samples"
           }
         ]
       }
